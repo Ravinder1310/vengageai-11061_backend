@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from "dotenv";
 import Connection  from './config/db.js';
 import ContactRoutes from "./routes/ContactsRoutes.js"
+import RecentRoutes from "./routes/RecentContactsRoutes.js"
 import cors from "cors";
 
 //configure env
@@ -18,6 +19,7 @@ app.use(express.json())
 
 // routes
 app.use('/api/v1/contacts',ContactRoutes);
+app.use('/api/v1/recents',RecentRoutes);
 
 
 app.get("/", (req,res)=>{
